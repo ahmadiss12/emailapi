@@ -1,0 +1,17 @@
+ <html>
+    <head>
+        <title>Success</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+        <body>
+            <div class="container-fluid">
+                <h1>Failure!</h1>
+                <p>There was an error signing you up for our newsletter. Please try again.</p>
+                
+            </div>
+
+            <form action="/failure" method="post">
+                <input type="hidden" name="retry" value="true">
+                <button style="background-color: #007bff; color: white;" type="submit" name="retrybtn" class="btn btn-prim">Retry</button>
+            </form>
+        </body>
+    </html>

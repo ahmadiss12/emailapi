@@ -14,6 +14,7 @@ app.get("/",function(req,res){
     res.sendFile(__dirname+"/signin.html");
 })
 
+
 app.post("/signin",function(req,res){
     var fname=req.body.fname;
     var lname=req.body.lname;
@@ -34,7 +35,7 @@ app.post("/signin",function(req,res){
     const url="https://us3.api.mailchimp.com/3.0/lists/c7f48a5049";
     const options={
         method:"POST",
-        auth:"user:813ba42d0cb1d667ad876188b1e896b-us3"
+        auth:"user:6072e2e05181249d279f70bfafd751fc-us3"
     };
     const request = https.request(url,options,function(response){
         if (response.statusCode===200){
@@ -44,6 +45,7 @@ app.post("/signin",function(req,res){
            });
         } else {
             res.sendFile(__dirname+"/failure.html");
+            console.log("Error: " + response.statusCode);
         }
     });
     request.write(jsonData);
@@ -57,5 +59,5 @@ app.post("/failure",function(req,res){
 
 
 
-//8813ba42d0cb1d667ad876188b1e896b-us3 
+//6072e2e05181249d279f70bfafd751fc-us3
 // c7f48a5049 
